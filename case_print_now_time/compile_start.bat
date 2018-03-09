@@ -1,0 +1,1 @@
+gcc main.c -o print_now_time
