@@ -1,0 +1,1 @@
+gcc main_linux.c -o print_system_boot_time

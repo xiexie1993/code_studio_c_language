@@ -65,7 +65,10 @@
 │  └─ README.md                         当前实例的自述文件
 ├─ case_write_log_file                  实例3：打开本地文件写入文字
 │  ├─ ...                               实例代码
-│  └─ README.md                         当前实例的自述文件
+│  └─ README.md                         当前实例的自述文件  
+├─ case_print_system_boot_time          实例3：打印系统开机时间
+│  ├─ ...                               实例代码
+│  └─ README.md                         当前实例的自述文件 
 ├─ ...                                  更多例子(欢迎创建)
 └─ README.md                            自述文件
 
