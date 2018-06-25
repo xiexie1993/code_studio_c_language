@@ -4,7 +4,7 @@
 
 ### 本例子代码功能说明
 
-+ 打开本地文件写入文字
++ 线程例子
 
 
 ## 二、代码说明
@@ -13,7 +13,7 @@
 
 <pre><code>
 
-./                            当前目录( case_write_log_file )
+./                            当前目录( case_pthread )
 ├─ compile_start.bat          windows环境编译脚本
 ├─ pthread_windows.c          线程例子函数代码
 └─ README.md                  当前自述文件
