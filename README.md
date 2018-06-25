@@ -72,6 +72,12 @@
 ├─ case_socket_windows                  实例4：c语言socket例子（windows）
 │  ├─ ...                               实例代码
 │  └─ README.md                         当前实例的自述文件 
+├─ case_game_snake                      实例5：c语言贪吃蛇小游戏例子
+│  ├─ ...                               实例代码
+│  └─ README.md                         当前实例的自述文件 
+├─ case_pthread                         实例6：c语言线程例子
+│  ├─ ...                               实例代码
+│  └─ README.md                         当前实例的自述文件 
 ├─ ...                                  更多例子(欢迎创建)
 └─ README.md                            自述文件
 

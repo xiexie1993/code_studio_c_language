@@ -1,0 +1,1 @@
+gcc snake_linux.c -lcurses -o snake

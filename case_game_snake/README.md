@@ -4,8 +4,7 @@
 
 ### 本例子代码功能说明
 
-+ 打开本地文件写入文字
-
++ 贪吃蛇小游戏
 
 ## 二、代码说明
 
@@ -13,15 +12,11 @@
 
 <pre><code>
 
-./                            当前目录( case_write_log_file )
-├─ compile_start.bat          windows环境编译脚本
-├─ makefile                   linux环境编译脚本
-├─ main.c                     主函数代码
-├─ subfunction.h              头文件
-├─ subfunction.c              头文件对应的函数原型
-├─ log_xxxx-xx-xx.txt         根据当前日期生成文本文件
-├─ write_log_file.exe         编译后生成的可执行文件（windows）
-└─ README.md                  当前自述文件
+./                                        当前目录( case_game_snake )
+├─ compile_start.bat                      windows环境编译脚本
+├─ snake_windows.c                        windows版贪吃蛇代码
+├─ intelligent_snake_windows.c            windows版智能贪吃蛇代码
+└─ README.md                              当前自述文件
 
 </code></pre>
 
@@ -36,18 +31,29 @@
 
 + 1、 编译生成可执行文件
     + 方法a：打开命令窗口，切换到当前目录, 按顺序执行以下命令 
-        + gcc  -c  main.c
-        + gcc  -c  subfunction.c
-        + gcc main.o  subfunction.o -o write_log_file
-        + 注：执行完会先生成 main.o、subfunction.o ,再生成 write_log_file.exe
+        + 贪吃蛇代码
+            + gcc -c  snake_windows.c
+            + gcc snake_windows.o  -o snake
+        + 智能贪吃蛇
+            + gcc -c  intelligent_snake_windows.c
+            + gcc intelligent_snake_windows.o  -o intelligent_snake
+        + 注：windows下执行完会先生成 snake_windows.o 、intelligent_snake_windows.o， 再生成 snake.exe、intelligent_snake.exe
 
     + 方法b：
        + 执行写好的编译脚本 compile_start.bat（windows）
        + 执行写好的编译脚本 （linux）
 
 + 2、 运行可执行文件
-    + windows系统： 打开命令窗口，切换到当前目录, 执行 write_log_file.exe 则会生成log_xxxx-xx-xx.txt 并且往里面写入字符串
-    + linux系统：   打开命令窗口，切换到当前目录, 执行 ./write_log_file 
+    + windows系统： 打开命令窗口，切换到当前目录, 执行 snake.exe 或 intelligent_snake_windows.exe 
+    + linux系统：   打开命令窗口，切换到当前目录, 执行 
+
+>
+
+#### 编译时遇到问题及解决方法记录
+snake_linux.c:4:21: 致命错误：windows.h：没有那个文件或目录
+解决办法：安装对应缺少的库
++ Ubuntu： sudo apt-get install libncurses5 libncurses5-dev 
++ CentOS： sudo yum install ncurses-devel
 
 ## 三、环境搭建
 
@@ -75,8 +81,11 @@
 
 ## 四、开发日志
 
----
->  时间： 2018-03-08 22:58:56
->> 创建第一版
 
 
+## 参考资料
+
++ [贪吃蛇C语言代码](https://blog.csdn.net/sgafpzys/article/details/51180061)
++ [关于centos 5.5 程序中编译出现curses.h不存在问题](https://blog.csdn.net/xumaojun/article/details/6229789)
++ [[错误] curses.h：没有那个文件或目录 编译中断](https://blog.csdn.net/woyaozuo2012/article/details/12208095)
++ [Linux 环境下C语言编译实现贪吃蛇游戏](https://www.linuxidc.com/Linux/2011-08/41375.htm)

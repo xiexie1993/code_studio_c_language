@@ -1,0 +1,1 @@
+gcc  pthread_windows.c -o pthread_windows -lpthread
