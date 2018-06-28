@@ -88,6 +88,8 @@
 
 + 由于Windows不区分大小写,而linux区分大小写，编写时请注意大小写统一
 
++
+
 
 ## 三、环境搭建
 
@@ -191,3 +193,7 @@
 
 ## 五、参考资料
 
++ [C语言编程规范](https://blog.csdn.net/u011641885/article/details/79585242)
++ [C语言编程规范—命名规则](https://www.cnblogs.com/wfwenchao/p/5209197.html)
+
++ [C学习笔记——使用CL编译器](https://www.cnblogs.com/bugY/archive/2011/08/17/2142086.html)

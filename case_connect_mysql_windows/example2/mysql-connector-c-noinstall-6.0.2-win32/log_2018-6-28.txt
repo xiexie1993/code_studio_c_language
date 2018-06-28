@@ -1,0 +1,26 @@
+INFO:2018/6/28-18:52:10 : 
+ Press any key to start. 
+
+INFO:2018/6/28-18:52:12 : ds
+INFO:2018/6/28-18:52:12 : 
+ Connection success......
+
+INFO:2018/6/28-18:52:12 : 
+ SQL: select host, user from user :
+
+INFO:2018/6/28-18:52:12 : %	root
+
+INFO:2018/6/28-18:52:12 : %	xzb
+
+
+INFO:2018/6/28-18:52:12 : %	xzbzftl
+
+INFO:2018/6/28-18:52:12 : ::1	root
+
+INFO:2018/6/28-18:52:12 : localhost	root
+
+INFO:2018/6/28-18:52:12 : 
+ Complete! 
+
+INFO:2018/6/28-18:52:15 : d
+INFO:2018/6/28-18:52:16 : d
