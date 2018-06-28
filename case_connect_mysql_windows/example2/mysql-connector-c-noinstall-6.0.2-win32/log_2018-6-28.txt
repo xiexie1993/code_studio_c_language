@@ -24,3 +24,50 @@ INFO:2018/6/28-18:52:12 :
 
 INFO:2018/6/28-18:52:15 : d
 INFO:2018/6/28-18:52:16 : d
+INFO:2018/6/28-20:1:7 : 
+ Press any key to start. 
+
+INFO:2018/6/28-20:1:11 : j
+INFO:2018/6/28-20:1:12 : 
+ Connection failed......0:No error
+
+INFO:2018/6/28-20:2:18 : 
+ Press any key to start. 
+
+INFO:2018/6/28-20:2:23 : j
+INFO:2018/6/28-20:2:23 : 
+ Connection success......
+
+INFO:2018/6/28-20:2:23 : 
+ SQL: select host, user from user :
+
+INFO:2018/6/28-20:2:23 : 127.0.0.1	root
+
+INFO:2018/6/28-20:2:23 : ::1	root
+
+INFO:2018/6/28-20:2:23 : localhost	root
+
+INFO:2018/6/28-20:2:23 : 
+ Complete! 
+
+INFO:2018/6/28-20:2:27 : 
+INFO:2018/6/28-20:2:28 : 
+INFO:2018/6/28-20:2:45 : 
+ Press any key to start. 
+
+INFO:2018/6/28-20:2:48 : j
+INFO:2018/6/28-20:2:48 : 
+ Connection success......
+
+INFO:2018/6/28-20:2:48 : 
+ SQL: select host, user from user :
+
+INFO:2018/6/28-20:2:48 : 127.0.0.1	root
+
+INFO:2018/6/28-20:2:48 : ::1	root
+
+INFO:2018/6/28-20:2:48 : localhost	root
+
+INFO:2018/6/28-20:2:48 : 
+ Complete! 
+
