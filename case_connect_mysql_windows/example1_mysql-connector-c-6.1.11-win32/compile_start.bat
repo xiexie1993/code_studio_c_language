@@ -1,1 +1,0 @@
-gcc  -Iinclude -Llib test_connect_mysql.c -llibmysql -o  test_connect_mysql

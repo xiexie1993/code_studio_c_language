@@ -177,15 +177,20 @@
     本部分参考资料：
     +[程序无法启动ALL_BUILD 拒绝访问](https://blog.csdn.net/jyl1999xxxx/article/details/50627600)
 
++ GCC编译器命令说明
+    + -I   (注意是大写的i)
+        * 要利用-I来显式指定头文件的所在地，  -I就是用来干这个的：告诉gcc去哪里找头文件。
+
+    + -L(注意是大写的L)
+        * 是用来告诉gcc去哪里找库文件
+
+    + -l （注意是小写的L）
+        * -l的作用就是用来指定具体的静态库、动态库是哪个
 
 
 ## 四、开发日志
 
->时间：2018-03-08 22:03:11
->>创建项目模板
----
->
->>
+
 
 
 
@@ -197,3 +202,6 @@
 + [C语言编程规范—命名规则](https://www.cnblogs.com/wfwenchao/p/5209197.html)
 
 + [C学习笔记——使用CL编译器](https://www.cnblogs.com/bugY/archive/2011/08/17/2142086.html)
+
+
++ [GCC编译器中的-I -L -l 选项。](https://blog.csdn.net/qq_32790673/article/details/52873496)

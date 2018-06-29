@@ -13,16 +13,16 @@
 
 ~~~
 
-./                                              当前目录( case_hello_world )
-├─ compile_start.bat                            windows环境编译脚本
-├─ vendor                                       需要包含的第三方库
-│  ├─ mysql-connector-c-noinstall-6.0.2-win32
+./                            当前目录(  )
+├─mysql-connector-c-noinstall-6.0.2-win32
+│  ├─ compile_start.bat                            windows环境编译脚本
+│  ├─ include                                      
+│  ├─ connect_mysql.c                              主函数代码
+│  ├─ connect_mysql.exe                            编译后生成的可执行文件（windows）
+│  ├─ write_log.h                                  自己编写的程序运行日志记录函数头文件
 │  └─ ...
-├─ connect_mysql.c                              主函数代码
-├─ connect_mysql.exe                            编译后生成的可执行文件（windows）
-├─ write_log.c                                  自己编写的程序运行日志记录函数
-├─ write_log.h                                  自己编写的程序运行日志记录函数头文件
-└─ README.md                                    当前自述文件
+
+└─ README.md                  当前自述文件
 
 ~~~
 
@@ -58,19 +58,41 @@
 
     + b、然后，再在此目录还是命令行运行MinGW GCC本身自带的命令 dlltool -k -d libmysql.def -l libmysql.a , 得到我们最后需要链接的库文件libmysql.a。
     
-    + c、在项目更目录下新建vendor目录用来存放第三方包，将上一步的完成后的整个文件夹mysql-connector-c-noinstall-6.0.2-win32 移动到新建的vendor目录里，再在vendor同级目录新建我们的测试文件connect_mysql.c write_log.c write_log.h：
+    + c、在Mysql开发包的目录下(即与include和lib同级)新建我们的测试文件main.c，简单测试源码如下：
 
-      + d、再在源文件所在路径运行编译命令：gcc  -c  write_log.c 和 gcc write_log.o connect_mysql.c   -o connect_mysql  -L ./vendor/mysql-connector-c-noinstall-6.0.2-win32/lib -l ./vendor/mysql-connector-c-noinstall-6.0.2-win32/lib/libmysql ,生成可执行文件
+      ~~~
+        #include <stdio.h>  
+        #include <winsock2.h>  
+        #include "mysql.h"  
+        int main()  
+        {  
+            MYSQL mysql;  
+            mysql_init(&mysql);  
+            if(!mysql_real_connect(&mysql, "localhost", "root", "admin", "demo", 3306, NULL, 0))  
+            {  
+                printf("/nconnect error!");  
+            }  
+            else  
+            {  
+                printf("/nconnect success!/n");  
+            }  
+            mysql_close(&mysql);  
+            return 0;  
+        }  
+      ~~~
+      
+      > 注：(当然你也可以本例子代码已经写好 即 connect_mysql.c write_log.c write_log.h)
 
-      + e、将lib目录下的libmysql.dll拷贝一份到vendor 同级目录下( 不然编译完，运行connect_mysql.exe时会提示找不到dll)
+      + d、将lib目录下的libmysql.dll拷贝一份到main.c的目录(即与include和lib同级)
+      
+      + e、再在源文件所在路径运行编译命令：gcc -Iinclude -Llib main.c -llibmysql ,生成可执行文件
 
 > 注：此git在gitignore设置了文件过滤，没有提交dll，.a,.exe等，请到 src资源包里或自行下载完整的包
-
 
 #### 2.2 详细步骤
 
 + 1、 编译生成可执行文件
-    + 方法a：打开命令窗口，切换到当前目录, 执行 gcc -Iinclude -L ./vendor/mysql-connector-c-noinstall-6.0.2-win32/lib write_log.o connect_mysql.c -l ./mysql-connector-c-noinstall-6.0.2-win32/lib/libmysql  -o connect_mysql
+    + 方法a：打开命令窗口，切换到当前目录, 执行 gcc  -c  write_log.c 再执行 gcc -Iinclude -Llib write_log.o connect_mysql.c -llibmysql  -o connect_mysql
 
     + 方法b：执行写好的编译脚本 compile_start.bat（windows）
 
@@ -123,5 +145,6 @@
 
 + [[转]Windows下用GCC连接MySQL数据库](http://www.cnblogs.com/yizhe/articles/3825877.html)
 + [mysql-connector-c-noinstall-6.0.2-win32](https://dev.mysql.com/downloads/file/?id=377978)
+
 
 + [GCC编译器中的-I -L -l 选项。](https://blog.csdn.net/qq_32790673/article/details/52873496)
